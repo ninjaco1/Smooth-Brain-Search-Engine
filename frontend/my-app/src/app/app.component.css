@@ -1,0 +1,58 @@
+.main-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+  margin: auto;
+  /* justify-content: space-around; */
+  /* align-items: center; */
+}
+
+.text-style {
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+
+.nice-boxes {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  height: 700px;
+  width: 1000px;
+}
+
+.front-box {
+  width: 800px;
+  height: 500px;
+  background: rgb(252, 203, 144);
+  background: linear-gradient(
+    120deg,
+    rgba(252, 203, 144, 1) 0%,
+    rgba(213, 126, 235, 1) 100%
+  );
+  border-radius: 20px;
+  position: absolute;
+  margin: auto;
+  transform: rotate(-2deg);
+  /* display: block; */
+}
+
+.back-box {
+  background: rgba(255, 255, 255, 0.25);
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  position: absolute;
+}
+
+.app-searchbar {  
+  text-align: left;
+  position: relative;
+  margin: auto;
+  /* padding: 100px; */
+  /* display: flex; */
+}
