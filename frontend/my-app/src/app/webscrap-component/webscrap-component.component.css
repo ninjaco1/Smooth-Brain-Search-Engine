@@ -1,0 +1,116 @@
+.webscrap-page {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: auto;
+  justify-content: flex-start;
+  
+}
+
+.webscrap-box {
+    color: rgb(58, 54, 54);
+    
+    display: flex;
+    justify-content: flex-start;
+    backdrop-filter: blur(10px);
+    opacity: .9;
+    padding: 20px;
+    /* margin: auto; */
+    
+}
+
+#all-header {
+  font-size: 50px;
+  /* text-align: center; */
+}
+
+.webscrap-chart {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+}
+
+.chart-stats {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: flex-start;
+  /* margin: auto; */
+
+}
+
+.chart-stats-elements {
+  padding: 5px;
+  /* margin: auto; */
+}
+
+.webscrap-fin {
+  display: flex;
+  flex-direction:column;
+}
+
+.webscrap-twitter {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tweet-box {
+  height: 300px;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+
+}
+
+.tweets {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.webscrap-reddit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.reddit-box {
+  width: 75%;
+  height: 300px;
+  /* padding:20px; */
+  margin: auto;
+  background-color:#222222;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+}
+
+.reddit-left-bar {
+  /* background-color: #161617; */
+  background-color:#242424;
+  margin: 10px;
+  /* margin-bottom: 10px; */
+  padding: 5px;
+  color: #d2d5d7;
+  border-radius: 5px;
+}
+
+.reddit-box-tweet {
+  margin: 10px;
+  display: flex;
+  flex-direction:column;
+  color: #d2d5d7;
+}
