@@ -22,8 +22,7 @@ function getFinReport(req, res) {
     finReport = require('../data/financial-reports.json');
     
     res.write(JSON.stringify(finReport));
-
-
+    res.send(JSON.stringify(finReport));
     
 }
 
@@ -33,6 +32,7 @@ function getPriceAction(req, res) {
     
     priceAction = require('../data/price-action.json');
     res.write(JSON.stringify(priceAction));
+    res.send(JSON.stringify(priceAction));
 }
 
 

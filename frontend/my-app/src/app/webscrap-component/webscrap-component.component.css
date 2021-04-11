@@ -49,6 +49,18 @@
   flex-direction:column;
 }
 
+.fin-mat {
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.fin-mat-ele {
+  /* padding: 10px;
+  margin: 10px; */
+}
+
 .webscrap-twitter {
   display: flex;
   flex-direction: column;
@@ -87,6 +99,7 @@
   height: 300px;
   /* padding:20px; */
   margin: auto;
+  margin-bottom: 30px;
   background-color:#222222;
   -webkit-box-shadow: 0 10px 6px -6px #777;
      -moz-box-shadow: 0 10px 6px -6px #777;

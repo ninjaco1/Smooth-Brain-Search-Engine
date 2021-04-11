@@ -26,13 +26,14 @@ export class WebscrapComponentComponent implements OnInit {
 
   getReport(): void {
 
-    this.webscrapeService.getReport().subscribe((report: any) => this.financialReport = report);
+    this.webscrapeService.getReport().subscribe((report) => console.log(report));
 
   }
 
   ngOnInit(): void {
     this.message = this.shared.getMessage();
 
+    console.log("Getting Report");
     this.getReport();
 
     this.http
@@ -43,12 +44,12 @@ export class WebscrapComponentComponent implements OnInit {
         console.log(data);
       });
 
-    this.http
-      .get<any>('http://localhost:3000/gets/financial-report')
-      .subscribe((data) => {
-        this.financialReport = JSON.parse(data[0]); // object for certain stock
-        this.ticker = this.financialReport.Symbol;
-        console.log(data[0]);
-      });
+    // this.http
+    //   .get<any>('http://localhost:3000/gets/financial-report')
+    //   .subscribe((data) => {
+    //     this.financialReport = JSON.parse(data[0]); // object for certain stock
+    //     this.ticker = this.financialReport.Symbol;
+    //     console.log(data[0]);
+    //   });
   }
 }

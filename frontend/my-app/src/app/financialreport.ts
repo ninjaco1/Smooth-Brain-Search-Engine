@@ -1,4 +1,4 @@
 export interface FinancialReport {
-    id: number;
+    symbol: string;
     name: string;
 }
