@@ -19,36 +19,44 @@ app.listen(3000, function () {
 // finanical-report API
 app.get("/gets/financial-report", getFinReport);
 function getFinReport(req, res) {
-    finReport = require('../data/financial-reports.json');
-    
+    finReport = require("./financial-reports.json");
+
     // res.write(JSON.stringify(finReport));
     res.send(JSON.stringify(finReport));
-    
 }
 
 // Price Action API
 app.get("/gets/price-action", getPriceAction);
 function getPriceAction(req, res) {
-    
-    priceAction = require('../data/price-action.json');
+    priceAction = require("./price-action.json");
     // res.write(JSON.stringify(priceAction));
     res.send(JSON.stringify(priceAction));
 }
 
-
 // runnning python script
 app.post("/posts/chart-stats", (req, res) => {
     let ticker = req.body.ticker;
-    console.log("ticker")
-    var {spawn} = require("child_process");
+    console.log(ticker);
+
+    var { spawn } = require("child_process");
     var process = spawn("python", ["../data/alpha2ts.py", ticker]);
 
-  
+    console.log("script executed");
 
-    process.stdout.on("data", function (data) {
-        console.log(data.toString());
-        res.write(data.toString());
-        res.end('end')
-    });
+    // process.on("exit", function (code, signal) {
+    //     console.log(
+    //         "child process exited with " + `code ${code} and signal ${signal}`
+    //     );
+    //     res.status(200).end();
+    // });
 
+    res.status(200).end();
+
+    // res.sendStatus(200);
+
+    // process.stdout.on("data", function (data) {
+    //     console.log(data.toString());
+    //     res.send(data.toString());
+    //     res.end("end");
+    // });
 });
