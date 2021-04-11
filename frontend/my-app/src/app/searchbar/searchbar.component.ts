@@ -30,8 +30,13 @@ export class SearchbarComponent implements OnInit {
     this.shared.setMessage(this.searchbar);
     this.webscrapeService
       .sendTicker(this.searchbar.toUpperCase())
-      .subscribe((res) => this.res_text = res);
+      .subscribe((res) => (this.res_text = res));
     //this.http.post<any>("http://localhost:3000/posts/chart-stats",{ticker: this.searchbar.toUpperCase()});
-    this.router.navigate(navigationDetails);
+
+    setTimeout(() => {
+      this.router.navigate(navigationDetails);
+    }, 2100);
+
+    // this.router.navigate(navigationDetails);
   }
 }
