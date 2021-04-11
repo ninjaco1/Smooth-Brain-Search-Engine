@@ -21,8 +21,9 @@ export class SearchbarComponent implements OnInit {
       navigationDetails.push($myParam);
     }
     this.shared.setMessage(this.searchbar);
+    this.http.post<any>("http://localhost:3000/posts/chart-stats",{ticker: this.searchbar.toUpperCase()});
     this.router.navigate(navigationDetails);
-    this.http.post("https://localhost:3000/posts/chart-stats",{ticker: this.searchbar});
+    
   }
 
   

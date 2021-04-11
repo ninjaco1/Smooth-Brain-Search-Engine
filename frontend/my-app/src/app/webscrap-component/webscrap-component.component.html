@@ -1,18 +1,17 @@
 <div class="webscrap-page">
     <!-- stock graph -->
     <div class="webscrap-box webscrap-chart" >
-
-        <p>{{financialReport}}</p>
         
-        <h1 id="all-header">Chart</h1>
+        <h3 id="all-header">Chart</h3>
         <!-- <br> -->
         <!-- basic info bar --> 
         <div class="chart-stats">
-            <h4 class="chart-stats-elements">{{ticker}}</h4><br>
-            <h4 class="chart-stats-elements">currentPrice  </h4><br>
-            <h4 class="chart-stats-elements">priceChange24 </h4><br>
-            <h4 class="chart-stats-elements">priceChangeWeek </h4><br>
-            <h4 class="chart-stats-elements">priceChangeMonth </h4><br>
+            <p class="chart-stats-elements"><strong>{{financialReport.Symbol}}</strong></p><br>
+            <p class="chart-stats-elements"><strong>${{latest_date['4. close']}}</strong> </p><br>
+            <p class="chart-stats-elements"><strong>Vol:</strong> {{latest_date['5. volume']}} </p><br>
+            <p class="chart-stats-elements">Price Change (24h): </p><br>
+            <p class="chart-stats-elements">Price Change (Week): </p><br>
+            <p class="chart-stats-elements">Price Change (Month): </p><br>
         </div>
         
     </div>
@@ -21,19 +20,20 @@
     <!-- Finacials -->
     <div class="webscrap-box webscrap-fin" >
         <h1 id="all-header">Financials</h1>
-        <p>Name</p>
-        <p>Description</p>
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
         <div class="fin-mat">
-            <p class="fin-mat-ele">P/E Ratio</p>
-            <p class="fin-mat-ele">Price Target</p>
-            <p class="fin-mat-ele">Volume</p>
-            <p class="fin-mat-ele">52 Week High</p>
-            <p class="fin-mat-ele">52 Week Low</p>
-            <p class="fin-mat-ele">Short Interest</p>
-            <p class="fin-mat-ele">Ex-Dividend Date</p>
-            <p class="fin-mat-ele">Balance Sheets</p>
-            <p class="fin-mat-ele">Income Statement</p>
-            <p class="fin-mat-ele">Cash Flow</p>
+            <p class="fin-mat-ele"><strong>Sector:</strong> {{financialReport.Sector}}</p>
+            <p class="fin-mat-ele"><strong>P/E Ratio:</strong> {{financialReport.PERatio}}</p>
+            <p class="fin-mat-ele"><strong>Price Target:</strong> ${{financialReport.AnalystTargetPrice}}</p>
+            <p class="fin-mat-ele"><strong>Market Capitalization:</strong> ${{financialReport.MarketCapitalization}}</p>
+            <p class="fin-mat-ele"><strong>52 Week High:</strong> ${{financialReport["52WeekHigh"]}}</p>
+            <p class="fin-mat-ele"><strong>52 Week Low:</strong> ${{financialReport["52WeekLow"]}}</p>
+            <p class="fin-mat-ele"><strong>Short Interest:</strong> {{financialReport.ShortRatio}}</p>
+            <p class="fin-mat-ele"><strong>Dividend Date:</strong> {{financialReport.DividendDate}}</p>
+            <p class="fin-mat-ele"><strong>Ex-Dividend Date:</strong> {{financialReport.ExDividend}}</p>
+            <p class="fin-mat-ele"><strong>Dividend Per Share:</strong> {{financialReport.DividendPerShare}}</p>
+            <p class="fin-mat-ele"><strong>Payout Ratio:</strong> {{financialReport.PayoutRatio}}</p>
         </div>
         
     </div>
@@ -66,7 +66,7 @@
         <div class="reddit-box">
             <div class="reddit-left-bar">12.6k</div>
             <div class="reddit-box-tweet">
-                <h4> Reddit Username</h4>
+                <h4> /u/ToTheMoonnn</h4>
                 This is going to be the first post of 5 regarding crispr, and why it's the play of the decade 🚀 🚀 🚀 🚀. Mods, thank
                 you so much for letting me post it. If there's anything I need to do I'm happy to make any edits (no pun intended).
                 

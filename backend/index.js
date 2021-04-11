@@ -4,7 +4,7 @@ var express = require("express");
 var app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { write } = require("fs");
+const { write, read } = require("fs");
 
 app.use(cors());
 app.use(express.json());
@@ -21,7 +21,7 @@ app.get("/gets/financial-report", getFinReport);
 function getFinReport(req, res) {
     finReport = require('../data/financial-reports.json');
     
-    res.write(JSON.stringify(finReport));
+    // res.write(JSON.stringify(finReport));
     res.send(JSON.stringify(finReport));
     
 }
@@ -31,7 +31,7 @@ app.get("/gets/price-action", getPriceAction);
 function getPriceAction(req, res) {
     
     priceAction = require('../data/price-action.json');
-    res.write(JSON.stringify(priceAction));
+    // res.write(JSON.stringify(priceAction));
     res.send(JSON.stringify(priceAction));
 }
 
@@ -39,8 +39,16 @@ function getPriceAction(req, res) {
 // runnning python script
 app.post("/posts/chart-stats", (req, res) => {
     let ticker = req.body.ticker;
-    console.log(ticker)
-    var spawn = require("child_process").spawn;
-    spawn("python", ["../data/alpha2ts.py ", ticker]);
+    console.log("ticker")
+    var {spawn} = require("child_process");
+    var process = spawn("python", ["../data/alpha2ts.py", ticker]);
+
+  
+
+    process.stdout.on("data", function (data) {
+        console.log(data.toString());
+        res.write(data.toString());
+        res.end('end')
+    });
 
 });
